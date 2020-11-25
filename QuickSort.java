@@ -1,7 +1,8 @@
 // Java program for implementation of QuickSort 
 class QuickSort 
 { 
-    int repeticiones[] = new int[101];
+    int particiones[] = new int[101];
+    boolean primeraParticion = true;
     int partition(int arr[], int low, int high) 
     { 
         int pivot = arr[high];  
@@ -36,7 +37,10 @@ class QuickSort
       high  --> Ending index */
     void sort(int arr[], int low, int high) 
     {
-        repeticiones[high - low + 1]++;
+        if(primeraParticion){
+            particiones[high - low + 1]++;
+            primeraParticion = false;
+        }
         if (low < high) 
         { 
             /* pi is partitioning index, arr[pi] is  
@@ -58,14 +62,15 @@ class QuickSort
             System.out.print(arr[i]+" "); 
         System.out.println(); 
 
-        for (int i=0; i<n; ++i){ //arreglo con repeticiones
-          System.out.print("Arreglo de largo "+ i + " se repitió " + (repeticiones[i])+" "); 
+        for (int i=0; i<n; ++i){ //arreglo con particiones
+          System.out.print("Arreglo de largo "+ i + " se repitió " + (particiones[i])+" "); 
           System.out.println(); 
         }
     } 
 
-    public int repeticiones(int posicion){
-        return repeticiones[posicion];
+    public int particiones(int posicion){
+        return particiones[posicion];
     }
+    
 } 
 /*This code is contributed by Rajat Mishra */
