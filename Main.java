@@ -28,11 +28,11 @@ class Main {
             celdas[1][i].setCellValue(i);
         }
 
-        for(int i=0;i<100;i++){
+        for(int i=0;i<101;i++){
             int arr[] = new int[100];
             for(int ii=0;ii<100;ii++){
                 Random rand = new Random();
-                arr[i] = rand.nextInt(100);
+                arr[ii] = rand.nextInt(100);
             }
             int n = arr.length; 
 
