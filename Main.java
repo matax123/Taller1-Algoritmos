@@ -49,6 +49,7 @@ class Main {
             ob.sort(arr, 0, n-1);
             for(int ii=0;ii<100;ii++){
                 celdas[i+2][ii+1].setCellValue(ob.repeticiones(ii));
+                System.out.println("["+i+"] ["+ii+"] = "+ob.repeticiones(ii));
             }
         }
   

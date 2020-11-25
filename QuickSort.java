@@ -35,8 +35,7 @@ class QuickSort
       low  --> Starting index, 
       high  --> Ending index */
     void sort(int arr[], int low, int high) 
-    { 
-        System.out.println("Largo del arreglo a ordenar:" + (high - low + 1));
+    {
         repeticiones[high - low + 1]++;
         if (low < high) 
         { 
