@@ -49,7 +49,7 @@ class Main {
         double promedio[] = new double[101];
         for(int i=0;i<100;i++){
 
-            for(int ii=0;ii<100;ii++){
+            for(int ii=0;ii<101;ii++){
                 double valorASumar = Double.parseDouble(celdas[ii+2][i+1].toString());
                 total[i] = total[i] + valorASumar;
                 System.out.println("["+ii+"] valorASumar = " + valorASumar);
