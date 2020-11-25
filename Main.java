@@ -19,8 +19,7 @@ class Main {
                 celdas[x][y] = filas[y].createCell(x);
             }
         }
-        celdas[0][1].setCellValue("Tamaño de repetición");
-        celdas[1][0].setCellValue("N° de corrida");
+        celdas[0][0].setCellValue("Tamaño de repetición");
 
         String nombreArchivo = "Reporte.xls";
         try{
