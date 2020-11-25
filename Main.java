@@ -11,9 +11,9 @@ class Main {
         //creando el archivo excel
         Workbook libro = new HSSFWorkbook();
         Sheet hoja = libro.createSheet("Hoja");
-        Row filas[] = new Row[102];
-        Cell celdas[][] = new Cell[102][102];
-        for(int y=0;y<102;y++){
+        Row filas[] = new Row[103];
+        Cell celdas[][] = new Cell[103][102];
+        for(int y=0;y<103;y++){
             filas[y] = hoja.createRow(y);
             for(int x=0;x<102;x++){
                 celdas[y][x] = filas[y].createCell(x);
@@ -21,11 +21,11 @@ class Main {
         }
         celdas[0][1].setCellValue("Tamaño de repetición");
         celdas[1][0].setCellValue("N° de ejecución");
-        for(int i=2;i<101;i++){
-            celdas[i][0].setCellValue(i);
+        for(int i=0;i<101;i++){//n° de ejecucion
+            celdas[i+2][0].setCellValue(i);
         }
-        for(int i=1;i<101;i++){
-            celdas[1][i].setCellValue(i+1);
+        for(int i=1;i<101;i++){//tamaño de repeticion
+            celdas[1][i].setCellValue(i);
         }
 
         String nombreArchivo = "Reporte.xls";
@@ -37,17 +37,22 @@ class Main {
             System.err.println(exception.getMessage());
         }
 
-        int arr[] = new int[100];
         for(int i=0;i<100;i++){
-            Random rand = new Random();
-            arr[i] = rand.nextInt(100);
-        }
-        int n = arr.length; 
+            int arr[] = new int[100];
+            for(int ii=0;ii<100;ii++){
+                Random rand = new Random();
+                arr[i] = rand.nextInt(100);
+            }
+            int n = arr.length; 
 
-        QuickSort ob = new QuickSort(); 
-        ob.sort(arr, 0, n-1);
+            QuickSort ob = new QuickSort(); 
+            ob.sort(arr, 0, n-1);
+            for(int ii=0;ii<100;ii++){
+                celdas[i+2][ii+1].setCellValue(ob.repeticiones(ii));
+            }
+        }
   
-        System.out.println("Arreglo ordenado:"); 
-        ob.printArray(arr); 
+        System.out.println("Fin"); 
+        //ob.printArray(arr); 
     } 
 }

@@ -63,7 +63,10 @@ class QuickSort
           System.out.print("Arreglo de largo "+ i + " se repitió " + (repeticiones[i])+" "); 
           System.out.println(); 
         }
-
     } 
+
+    public int repeticiones(int posicion){
+        return repeticiones[posicion];
+    }
 } 
 /*This code is contributed by Rajat Mishra */
