@@ -33,8 +33,9 @@ class Main {
         for(int i=0;i<101;i++){
             int arr[] = new int[100];
             for(int ii=0;ii<100;ii++){
-                Random rand = new Random();
-                arr[ii] = rand.nextInt(100);
+                //Random rand = new Random();
+                //arr[ii] = rand.nextInt(100);
+                arr[ii] = ii;
             }
             int n = arr.length; 
 
