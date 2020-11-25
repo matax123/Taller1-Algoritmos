@@ -16,10 +16,11 @@ class Main {
         for(int y=0;y<100;y++){
             filas[y] = hoja.createRow(y);
             for(int x=0;x<100;x++){
-                celdas[x][y] = filas[y].createCell(x);
+                celdas[y][x] = filas[y].createCell(x);
             }
         }
-        celdas[0][0].setCellValue("Tamaño de repetición");
+        celdas[0][1].setCellValue("Tamaño de repetición");
+        celdas[1][0].setCellValue("N° de ejecución");
 
         String nombreArchivo = "Reporte.xls";
         try{
