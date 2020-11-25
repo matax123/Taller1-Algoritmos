@@ -50,9 +50,11 @@ class Main {
         for(int i=0;i<101;i++){
 
             for(int ii=0;i<100;i++){
-                total[i] = total[i] + Double.parseDouble(celdas[ii+2][i+1].toString());
+                double valorASumar = Double.parseDouble(celdas[ii+2][i+1].toString());
+                System.out.println("valorASumar = " + valorASumar); 
+                total[i] = total[i] + valorASumar;
             }
-            promedio[i] = total[i]/101;
+            promedio[i] = total[i]/100;
         }
 
         for(int i=0;i<101;i++){
