@@ -47,13 +47,14 @@ class Main {
         }
         double total[] = new double[101];
         double promedio[] = new double[101];
-        for(int i=0;i<101;i++){
+        for(int i=0;i<100;i++){
 
-            for(int ii=0;i<100;i++){
+            for(int ii=0;ii<100;ii++){
                 double valorASumar = Double.parseDouble(celdas[ii+2][i+1].toString());
-                System.out.println("valorASumar = " + valorASumar); 
                 total[i] = total[i] + valorASumar;
+                System.out.println("["+ii+"] valorASumar = " + valorASumar);
             }
+            System.out.println("total["+i+"] ="+total[i]);
             promedio[i] = total[i]/100;
         }
 
