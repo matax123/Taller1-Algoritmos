@@ -11,16 +11,22 @@ class Main {
         //creando el archivo excel
         Workbook libro = new HSSFWorkbook();
         Sheet hoja = libro.createSheet("Hoja");
-        Row filas[] = new Row[101];
-        Cell celdas[][] = new Cell[101][101];
-        for(int y=0;y<100;y++){
+        Row filas[] = new Row[102];
+        Cell celdas[][] = new Cell[102][102];
+        for(int y=0;y<102;y++){
             filas[y] = hoja.createRow(y);
-            for(int x=0;x<100;x++){
+            for(int x=0;x<102;x++){
                 celdas[y][x] = filas[y].createCell(x);
             }
         }
         celdas[0][1].setCellValue("Tamaño de repetición");
         celdas[1][0].setCellValue("N° de ejecución");
+        for(int i=2;i<101;i++){
+            celdas[i][0].setCellValue(i);
+        }
+        for(int i=1;i<101;i++){
+            celdas[1][i].setCellValue(i+1);
+        }
 
         String nombreArchivo = "Reporte.xls";
         try{
@@ -37,7 +43,7 @@ class Main {
             arr[i] = rand.nextInt(100);
         }
         int n = arr.length; 
-  
+
         QuickSort ob = new QuickSort(); 
         ob.sort(arr, 0, n-1);
   
