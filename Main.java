@@ -47,7 +47,7 @@ class Main {
         }
         double total[] = new double[101];
         double promedio[] = new double[101];
-        for(int i=0;i<100;i++){
+        for(int i=0;i<99;i++){
 
             for(int ii=0;ii<100;ii++){
                 double valorASumar = Double.parseDouble(celdas[ii+2][i+1].toString());
