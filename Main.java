@@ -28,15 +28,6 @@ class Main {
             celdas[1][i].setCellValue(i);
         }
 
-        String nombreArchivo = "Reporte.xls";
-        try{
-            FileOutputStream archivo = new FileOutputStream(nombreArchivo);
-            libro.write(archivo);
-            archivo.close();
-        }catch(IOException exception){
-            System.err.println(exception.getMessage());
-        }
-
         for(int i=0;i<100;i++){
             int arr[] = new int[100];
             for(int ii=0;ii<100;ii++){
@@ -51,6 +42,15 @@ class Main {
                 celdas[i+2][ii+1].setCellValue(ob.repeticiones(ii));
                 System.out.println("["+i+"] ["+ii+"] = "+ob.repeticiones(ii));
             }
+        }
+
+        String nombreArchivo = "Reporte.xls";
+        try{
+            FileOutputStream archivo = new FileOutputStream(nombreArchivo);
+            libro.write(archivo);
+            archivo.close();
+        }catch(IOException exception){
+            System.err.println(exception.getMessage());
         }
   
         System.out.println("Fin"); 
