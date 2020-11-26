@@ -40,18 +40,17 @@ class Main {
 
             QuickSort ob = new QuickSort(); 
             ob.sort(arr, 0, n-1);
-            for(int ii=0;ii<100;ii++){
+            for(int ii=0;ii<101;ii++){
                 celdas[i+2][ii+1].setCellValue(ob.particiones(ii));
                 System.out.println("["+i+"] ["+ii+"] = "+ob.particiones(ii));
             }
         }
-        double total[] = new double[101];
+        double total[] = new double[100];
         double promedio[] = new double[101];
         for(int i=0;i<100;i++){
             for(int ii=0;ii<101;ii++){
                 double valorASumar = Double.parseDouble(celdas[ii+2][i+1].toString());
                 total[i] = total[i] + valorASumar;
-                System.out.println("["+ii+"] valorASumar = " + valorASumar);
             }
             System.out.println("total["+i+"] ="+total[i]);
             promedio[i] = total[i]/100;

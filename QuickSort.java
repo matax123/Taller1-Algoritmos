@@ -2,9 +2,10 @@
 class QuickSort 
 { 
     int particiones[] = new int[101];
-    boolean primeraParticion = true;
     int partition(int arr[], int low, int high) 
     { 
+        particiones[high - low + 1]++;
+        System.out.println("particiones["+(high - low + 1)+"] = "+particiones[high - low + 1]);
         int pivot = arr[high];  
         int i = (low-1); // index of smaller element 
         for (int j=low; j<high; j++) 
@@ -37,10 +38,6 @@ class QuickSort
       high  --> Ending index */
     void sort(int arr[], int low, int high) 
     {
-        if(primeraParticion){
-            particiones[high - low + 1]++;
-            primeraParticion = false;
-        }
         if (low < high) 
         { 
             /* pi is partitioning index, arr[pi] is  
@@ -60,12 +57,7 @@ class QuickSort
         int n = arr.length; 
         for (int i=0; i<n; ++i) //arreglo final
             System.out.print(arr[i]+" "); 
-        System.out.println(); 
-
-        for (int i=0; i<n; ++i){ //arreglo con particiones
-          System.out.print("Arreglo de largo "+ i + " se repitió " + (particiones[i])+" "); 
-          System.out.println(); 
-        }
+        System.out.println();
     } 
 
     public int particiones(int posicion){
