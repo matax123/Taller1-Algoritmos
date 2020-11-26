@@ -22,7 +22,7 @@ class Main {
         celdas[0][1].setCellValue("Tamaño de repetición");
         celdas[1][0].setCellValue("N° de ejecución");
         for(int i=1;i<101;i++){//n° de ejecucion
-            celdas[i+2][0].setCellValue(i);
+            celdas[i+1][0].setCellValue(i);
         }
         celdas[103][0].setCellValue("Total:");
         celdas[104][0].setCellValue("Promedio:");
