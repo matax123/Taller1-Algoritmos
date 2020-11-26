@@ -40,8 +40,8 @@ class QuickSort
         { 
             /* pi is partitioning index, arr[pi] is  
               now at right place */
-            particiones[high - low + 1]++;
-            System.out.println("particiones["+(high - low +1)+"] = "+particiones[high - low +1]);
+            particiones[high - low]++;
+            System.out.println("particiones["+(high - low)+"] = "+particiones[high - low]);
             int pi = partition(arr, low, high); 
   
             // Recursively sort elements before 

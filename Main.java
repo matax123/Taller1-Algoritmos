@@ -24,8 +24,8 @@ class Main {
         for(int i=1;i<101;i++){//n° de ejecucion
             celdas[i+1][0].setCellValue(i);
         }
-        celdas[103][0].setCellValue("Total:");
-        celdas[104][0].setCellValue("Promedio:");
+        celdas[102][0].setCellValue("Total:");
+        celdas[103][0].setCellValue("Promedio:");
         for(int i=0;i<101;i++){//tamaño de repeticion
             celdas[1][i+1].setCellValue(i);
         }
@@ -45,7 +45,7 @@ class Main {
                 System.out.println("["+i+"] ["+ii+"] = "+ob.particiones(ii));
             }
         }
-        double total[] = new double[100];
+        double total[] = new double[101];
         double promedio[] = new double[101];
         for(int i=0;i<100;i++){
             for(int ii=0;ii<100;ii++){
