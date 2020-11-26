@@ -56,7 +56,7 @@ class Main {
             promedio[i] = total[i]/100;
         }
 
-        for(int i=0;i<100;i++){
+        for(int i=0;i<101;i++){
             celdas[102][i+1].setCellValue(total[i]);
             celdas[103][i+1].setCellValue(promedio[i]);
         }
