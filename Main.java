@@ -22,7 +22,7 @@ class Main {
         celdas[0][1].setCellValue("Tamaño de repetición");
         celdas[1][0].setCellValue("N° de ejecución");
         for(int i=1;i<101;i++){//n° de ejecucion
-            celdas[i+1][0].setCellValue(i);
+            celdas[i+2][0].setCellValue(i);
         }
         celdas[103][0].setCellValue("Total:");
         celdas[104][0].setCellValue("Promedio:");
@@ -30,7 +30,7 @@ class Main {
             celdas[1][i].setCellValue(i);
         }
 
-        for(int i=0;i<101;i++){
+        for(int i=0;i<100;i++){
             int arr[] = new int[100];
             for(int ii=0;ii<100;ii++){
                 Random rand = new Random();
@@ -48,7 +48,7 @@ class Main {
         double total[] = new double[100];
         double promedio[] = new double[101];
         for(int i=0;i<100;i++){
-            for(int ii=0;ii<101;ii++){
+            for(int ii=0;ii<100;ii++){
                 double valorASumar = Double.parseDouble(celdas[ii+2][i+1].toString());
                 total[i] = total[i] + valorASumar;
             }
