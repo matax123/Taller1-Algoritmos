@@ -11,9 +11,9 @@ class Main {
         //creando el archivo excel
         Workbook libro = new HSSFWorkbook();
         Sheet hoja = libro.createSheet("Hoja");
-        Row filas[] = new Row[105];
-        Cell celdas[][] = new Cell[105][102];
-        for(int y=0;y<105;y++){
+        Row filas[] = new Row[104];
+        Cell celdas[][] = new Cell[104][102];
+        for(int y=0;y<104;y++){
             filas[y] = hoja.createRow(y);
             for(int x=0;x<102;x++){
                 celdas[y][x] = filas[y].createCell(x);
@@ -24,11 +24,11 @@ class Main {
         for(int i=1;i<101;i++){//n° de ejecucion
             celdas[i+1][0].setCellValue(i);
         }
-        celdas[102][0].setCellValue("Total:");
-        celdas[103][0].setCellValue("Promedio:");
         for(int i=0;i<101;i++){//tamaño de repeticion
             celdas[1][i+1].setCellValue(i);
         }
+        celdas[102][0].setCellValue("Total:");
+        celdas[103][0].setCellValue("Promedio:");
 
         for(int i=0;i<100;i++){
             int arr[] = new int[100];
@@ -57,8 +57,8 @@ class Main {
         }
 
         for(int i=0;i<100;i++){
-            celdas[103][i+1].setCellValue(total[i]);
-            celdas[104][i+1].setCellValue(promedio[i]);
+            celdas[102][i+1].setCellValue(total[i]);
+            celdas[103][i+1].setCellValue(promedio[i]);
         }
 
         String nombreArchivo = "Reporte.xls";
