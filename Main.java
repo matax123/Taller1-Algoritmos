@@ -44,6 +44,7 @@ class Main {
                 celdas[i+2][ii+1].setCellValue(ob.particiones(ii));
                 System.out.println("["+i+"] ["+ii+"] = "+ob.particiones(ii));
             }
+            ob.printArray(arr);
         }
         double total[] = new double[101];
         double promedio[] = new double[101];
@@ -69,7 +70,6 @@ class Main {
         }catch(IOException exception){
             System.err.println(exception.getMessage());
         }
-  
         System.out.println("Fin"); 
         //ob.printArray(arr); 
     } 

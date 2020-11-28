@@ -17,7 +17,7 @@ class QuickSort
                 // swap arr[i] and arr[j] 
                 int temp = arr[i]; 
                 arr[i] = arr[j]; 
-                arr[j] = temp; 
+                arr[j] = temp;
             } 
         } 
   
@@ -36,14 +36,13 @@ class QuickSort
       high  --> Ending index */
     void sort(int arr[], int low, int high) 
     {
+        particiones[high - low + 1]++;
+        System.out.println("particiones["+(high - low + 1)+"] = "+particiones[high - low +1]);
         if (low < high) 
         { 
             /* pi is partitioning index, arr[pi] is  
               now at right place */
-            int pi = partition(arr, low, high); 
-
-            particiones[high - low + 1]++;
-            System.out.println("particiones["+(high - low + 1)+"] = "+particiones[high - low +1]);
+            int pi = partition(arr, low, high); //posicion del pivote
             
   
             // Recursively sort elements before 
