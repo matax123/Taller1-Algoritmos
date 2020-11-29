@@ -6,14 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 class Main {
-      public static void main(String args[]) 
+    public static void main(String args[]) 
     { 
         //creando el archivo excel
         Workbook libro = new HSSFWorkbook();
         Sheet hoja = libro.createSheet("Hoja");
-        Row filas[] = new Row[104];
-        Cell celdas[][] = new Cell[104][102];
-        for(int y=0;y<104;y++){
+        Row filas[] = new Row[105];
+        Cell celdas[][] = new Cell[105][102];
+        for(int y=0;y<105;y++){
             filas[y] = hoja.createRow(y);
             for(int x=0;x<102;x++){
                 celdas[y][x] = filas[y].createCell(x);
@@ -29,7 +29,11 @@ class Main {
         }
         celdas[102][0].setCellValue("Total:");
         celdas[103][0].setCellValue("Promedio:");
+        celdas[104][0].setCellValue("Mejor caso:");
+        celdas[104][2].setCellValue("Peor caso:");
 
+        int mejorCaso = 0;
+        int peorCaso = 0;
         for(int i=0;i<100;i++){
             int arr[] = new int[100];
             for(int ii=0;ii<100;ii++){
@@ -44,7 +48,8 @@ class Main {
                 celdas[i+2][ii+1].setCellValue(ob.particiones(ii));
                 System.out.println("["+i+"] ["+ii+"] = "+ob.particiones(ii));
             }
-            ob.printArray(arr);
+            mejorCaso += ob.mejorCaso();
+            peorCaso += ob.peorCaso();
         }
         double total[] = new double[101];
         double promedio[] = new double[101];
@@ -61,6 +66,8 @@ class Main {
             celdas[102][i+1].setCellValue(total[i]);
             celdas[103][i+1].setCellValue(promedio[i]);
         }
+        celdas[104][1].setCellValue(mejorCaso);
+        celdas[104][3].setCellValue(peorCaso);
 
         String nombreArchivo = "Reporte.xls";
         try{

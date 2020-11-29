@@ -2,6 +2,8 @@
 class QuickSort 
 { 
     int particiones[] = new int[101];
+    int mejorCaso = 0;
+    int peorCaso = 0;
     int partition(int arr[], int low, int high) 
     {
         int pivot = arr[high];  
@@ -44,6 +46,21 @@ class QuickSort
               now at right place */
             int pi = partition(arr, low, high); //posicion del pivote
             
+            if((high - low + 1)%2 == 0){ //si el largo es par
+                if((high - low + 1)/2 == pi || ((high - low + 1)/2) + 1== pi){
+                    mejorCaso++;
+                }
+            }
+            else{
+              if((high - low + 1)/2 == pi){
+                mejorCaso++;
+              }
+            }
+            if((high - low + 1) != 2){
+                if((high - low + 1) - 1 == pi){
+                    peorCaso++;
+                }
+            }
   
             // Recursively sort elements before 
             // partition and after partition 
@@ -64,6 +81,11 @@ class QuickSort
     public int particiones(int posicion){
         return particiones[posicion];
     }
-    
+    public int mejorCaso(){
+        return mejorCaso;
+    }
+    public int peorCaso(){
+        return peorCaso;
+    }
 } 
 /*This code is contributed by Rajat Mishra */
