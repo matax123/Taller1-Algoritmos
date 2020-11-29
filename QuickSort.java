@@ -48,12 +48,12 @@ class QuickSort
             
             if((high - low + 1) != 2){ //si el largo no es 2
                 if((high - low + 1)%2 == 0){ //si el largo es par
-                    if(((high - low + 1)/2) + low == pi || ((high - low + 1)/2) + low + 1 == pi){
+                    if(((high - low + 1)/2) + low == pi || ((high - low + 1)/2) + low - 1 == pi){
                     mejorCaso++;
                     }
                 }
                 else{
-                    if(((high - low + 1)/2) + low - 1 == pi){
+                    if(((high - low + 1)/2) + low == pi){
                         mejorCaso++;
                     }
                 }
