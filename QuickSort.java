@@ -47,17 +47,17 @@ class QuickSort
             int pi = partition(arr, low, high); //posicion del pivote
             
             if((high - low + 1)%2 == 0){ //si el largo es par
-                if((high - low + 1)/2 == pi || ((high - low + 1)/2) + 1== pi){
+                if(((high - low + 1)/2) - 1 == pi|| ((high - low + 1)/2) - 1 + 1 == pi){
                     mejorCaso++;
                 }
             }
             else{
-              if((high - low + 1)/2 == pi){
+              if((high - low + 1)/2 - 1 == pi){
                 mejorCaso++;
               }
             }
             if((high - low + 1) != 2){
-                if((high - low + 1) - 1 == pi){
+                if((high - low + 1) - 1 - 1 == pi){
                     peorCaso++;
                 }
             }
